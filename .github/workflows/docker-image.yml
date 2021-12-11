@@ -25,5 +25,5 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USER }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-    - name: Docker PUsh
-      run: docker push 
+    - name: Docker Push
+      run: docker push doink/smuggler:latest
