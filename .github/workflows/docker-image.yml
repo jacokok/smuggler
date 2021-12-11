@@ -19,4 +19,11 @@ jobs:
     - name: Available platforms
       run: echo ${{ steps.buildx.outputs.platforms }}
     - name: Build the Docker image
-      run: docker buildx build --platform linux/amd64,linux/arm64 -t smuggler:latest .
+      run: docker buildx build --platform linux/amd64,linux/arm64 -t doink/smuggler:latest .
+    - name: Docker Login
+      uses: docker/login-action@v1.10.0
+      with:
+        username: ${{ secrets.DOCKER_USER }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+    - name: Docker PUsh
+      run: docker push 
