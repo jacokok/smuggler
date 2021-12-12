@@ -1,2 +1,17 @@
 ### Test Pdf from URL
 POST http://localhost:3000/url
+Content-Type: application/json
+Accept: application/json
+
+{
+    "url": "https://example.com"
+}
+
+### Test Pdf from Html
+POST http://localhost:3000/html
+Content-Type: application/json
+Accept: application/json
+
+{
+    "html": "<div>test</div>"
+}
