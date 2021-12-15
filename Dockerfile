@@ -16,7 +16,7 @@ FROM base
 WORKDIR /usr/src/app
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 RUN npm install --production --silent && mv node_modules ../
-COPY --from=build /usr/src/app/dist .
+COPY --from=build /usr/src/app/dist ./dist
 RUN chown -R chrome /usr/src/app
 USER chrome
 CMD ["node", "./dist/index.js"]
